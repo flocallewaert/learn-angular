@@ -1,0 +1,21 @@
+<input type="text" #race>
+<button (click)="addRacer(race.value);">Add</button>
+
+<div>
+    <h2>Racers</h2>
+    
+    <ul *ngIf="racers.length > 0; else emptyRace">
+        <li *ngFor="let racer of racers; index as index; even as even; odd as odd; first as first; last as last" 
+        (click)="removeRacer(index)" [ngClass]="{'first': first, 'last': last, 'even': even, 'odd': odd}">{{index + 1}}-{{racer}}</li>
+    </ul>
+    
+    <ng-template #emptyRace>
+        <p  >No Racers !</p>
+    </ng-template>
+
+    <div [ngSwitch]="racers.length">
+        <p *ngSwitchCase="0">No racer</p>
+        <p *ngSwitchCase="1">One racer</p>
+        <p *ngSwitchDefault>Some racers</p>
+    </div>
+</div>

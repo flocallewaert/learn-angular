@@ -1,0 +1,24 @@
+<div>
+    <h1 [hidden]="isHidden" [ngStyle]="{'color':foreground, 'background': background}">{{title}}</h1>
+    <p [ngClass]="{'capitalize': isUpper, 'title': isTitle}">test ngClass</p>
+    <select name="category" id="category" #dropdown>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option [selected]="isSelected" value="3">Three</option>
+        <option value="3">Three</option>
+    </select>
+    <input type="text" #colorField>
+    <button (click)="changeForegroundColor(colorField.value)">change color</button>
+    
+    <div (click)="onForegroundClick($event, 'red')">
+        <button>Change foreground color</button>
+        <div (click)="onBackgroundClick($event, 'blue')">
+            <button>Change background color</button>
+        </div>
+    </div>
+
+    <h1 *ngIf="!isHidden; else autre">Test Template</h1>
+    <ng-template #autre><h1>Autre</h1></ng-template>
+
+    <app-demand></app-demand>
+</div>

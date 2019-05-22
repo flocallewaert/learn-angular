@@ -1,0 +1,30 @@
+<h2 style="text-align: center;">Cars</h2>
+<ul style="list-style-type: none;margin-left: 0;">
+    <li *ngFor="let car of cars" [style.backgroundColor]="car.color">
+        <p>{{car | json}}</p>
+        <!-- <p>{{car.brand}}</p>
+        <p>{{car.power}}</p>
+        <p>{{car.electric ? 'electic' : 'thermic'}}</p> -->
+    </li>
+</ul>
+<!-- {{cars | slice:0:2 | json | Uppercase | number:'6.2 | percent:'.3'}} -->
+<!-- {{cars | currency:'CAD':'symbol-narrow'}} -->
+<!-- {{cars | currency:'EUR':'symbol-narrow'}} -->
+<!-- {{date | date:'dd/MM/yyyy    '}} -->
+<div>
+    <input type="text" placeholder="brand" #brand>
+    <input type="text" placeholder="color" #color>
+    <input type="number" placeholder="power" #power>
+    <input type="checkbox" #electric>
+    <button type="button" (click)="addCar(brand.value, color.value, power.value, electric.checked)">+</button>
+</div>
+
+{{ '2010-2-2' | fromNow }}
+
+{{ 'uppercaseEven' | uppercaseEven }}
+
+<input #secondField appDoNothing="test" logText="log message from html" [otherText]="otherText">
+
+<!-- <input #firstField  appDoNothing="test" [logText]="myText" [otherText]="myOtherText"> -->
+
+<!-- {{object.json}} -->

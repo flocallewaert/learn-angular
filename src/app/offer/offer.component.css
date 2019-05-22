@@ -1,0 +1,14 @@
+.title
+{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.capitalize
+{
+    text-transform: capitalize;
+}
+.upper
+{
+    text-transform: uppercase;
+}
