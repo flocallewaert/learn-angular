@@ -8,7 +8,7 @@ import { EventEmitter } from 'events';
 })
 export class ChildComponent implements OnInit {
     @Input() works: string[];
-    @Output() workDone = new EventEmitter<string>();
+
     constructor(
     ) {
     }
